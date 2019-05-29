@@ -4,6 +4,7 @@ class CreateBroadwayShow < ActiveRecord::Migration[5.2]
       t.string :title
       t.string :genre
       t.boolean :in_theaters
+      t.integer :seat_number
     end
   end
 end

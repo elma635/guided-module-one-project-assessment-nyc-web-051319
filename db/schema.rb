@@ -16,18 +16,14 @@ ActiveRecord::Schema.define(version: 2019_05_28_161455) do
     t.string "title"
     t.string "genre"
     t.boolean "in_theaters"
+    t.integer "seat_number"
   end
 
   create_table "customers", force: :cascade do |t|
     t.string "name"
-    t.string "location"
   end
 
   create_table "tickets", force: :cascade do |t|
-    t.integer "number_of_people"
-    t.integer "seat_number"
-    t.string "time"
-    t.string "date"
     t.integer "broadway_show_id"
     t.integer "customer_id"
   end

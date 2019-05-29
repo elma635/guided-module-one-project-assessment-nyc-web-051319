@@ -2,39 +2,104 @@ class Customer < ActiveRecord::Base
   has_many :tickets
   has_many :broadway_shows, through: :tickets
 
-  def book_ticket(name , location, title, genre, seat_number, time, date)
-    Ticket.create(name , location, title, genre, seat_number, time, date)
-    #a customer can book/create a ticket
-
-# - would you like to book a ticket?
-# please enter the following information :
-#name , #location, #title, #genre, seat_number, time, date
 
 
-  end
+  # - would you like to book a ticket?
+  # # please enter the following information :
+  # #name , #location, #title, #genre, seat_number, time, date
+def self.book_ticket(customer_name)
+  if Customer.all.map do |person| person.name == customer_name
 
-  def choose_genres
 
-    # A customer can select a title or a genre for the movie they want to see
+
   end
 end
 
-# # Please enter your name to change seat num
-def change_seat_number (show_name, customer_id, seat_number)
-  Tickets.all.select do |person|
-    person.customer_id == show_name
+
+def self.book_ticket(broadway_show)
+    counter += 1
+      while BroadwayShow.all.map do |show| show.title == broadway_show
 
 
 
 
-    if customer_id.name == user_input
-        puts "Your seat has been changed to seat #{seat_number}"
-      else
-        "Sorry, that #{seat_number} is unavailable"
-        #how do i  measure seat numbers so that theres only a limited number being put out to be chosen from
-      end
-    end
+    #if the broadway_show name matches, set a new ticket for that show -- if the customer wants more than 1 ticket, puts "Your order is complete for x amount of  tix"
+  end
+end
+
+
+
+#(broadway_show_id, customer_id)
+
+
+#BroadwayShow.ids --> returns all broadway_show ids
+
+
+#  #<Ticket:0x00007f98ccd6c6a0 id: 2, broadway_show_id: 7, customer_id: 7>,
+#
+# tix2 = Ticket.create(broadway_show_id: 7, customer_id: 7)
+#
+# tix2
+# => #<Ticket:0x00007f98cd177768 id: 7, broadway_show_id: 7, customer_id: 7>
+#
+
+
+# #Update ticket options
+  def self.update_ticket(show_name)
+    BroadwayShow.find_by(name:"#{title}")
+      if "#{title}" == show_name
+
+
+
+
+
+# new_tix = Ticket.create(broadway_show_id:1, customer_id:4)
+# =>=> #<Ticket:0x00007fd1f4251cc8 id: 8, broadway_show_id: 1, customer_id: 4>
+#
+# so I see that this adds to the primary key of ticket but  how do i match customer name with a new ticket
+
+
   end
 
-#find_by
-#update
+# # def update_ticket
+# #
+# # case #when user_input = 1
+# # when #customer selects 1
+# #
+# # end
+#
+#
+#
+#
+#
+#
+# def change_time(user_input, preferred_time)
+#
+# end
+#
+# def change_date(user_input, preferred_date)
+
+end
+
+def cancel_ticket()
+
+end
+  #list of options on which one customer would like to do to their ticket
+
+  # - change seat number
+  #- change number of attendees
+  # - change time
+  # - change date
+  # - can cancel/delete their ticket
+  #
+
+
+
+
+
+
+
+
+
+
+end
