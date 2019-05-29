@@ -1,11 +1,16 @@
 require_relative '../config/environment'
 
 
-puts "Hello, user welcome to my app:"
+puts "Hello, user welcome to my broadway_shows app!"
 puts "\n"
 puts "please choose an option:"
 puts "1. See Shows"
 puts "2. See Account"
+puts "3. Update ticket"
+puts "4. Shows that are currently playing"
+puts "5. Enter a show name to find out the genre"
+puts "6. Please enter your name to change seat number"
+puts "7. Enter a show name to see if it is in theaters"
 response = gets.chomp
 case response
 when "See Shows"

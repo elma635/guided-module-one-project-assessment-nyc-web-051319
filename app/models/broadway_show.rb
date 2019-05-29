@@ -17,7 +17,7 @@ def self.genre(show_name)
     if show.title == show_name
       puts "The genre of this #{show_name} is #{show.genre}"
     else
-      "The genre of this show is unavailable because it will not be playing"
+      "The genre of this show is unavailable because it is not on queue to be playing at the time"
   end
 end
 

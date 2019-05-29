@@ -16,16 +16,18 @@ def self.book_ticket(customer_name)
 end
 
 
-def self.book_ticket(broadway_show)
-    counter += 1
-      while BroadwayShow.all.map do |show| show.title == broadway_show
-
-
-
-
-    #if the broadway_show name matches, set a new ticket for that show -- if the customer wants more than 1 ticket, puts "Your order is complete for x amount of  tix"
-  end
-end
+# def self.book_ticket(broadway_show)
+#     counter += 1
+#       while BroadwayShow.all.map do |show| show.title == broadway_show
+#
+#
+#
+#
+#     #if the broadway_show name matches, set a new ticket for that show -- if the customer wants more than 1 ticket, puts "Your order is complete for x amount of  tix"
+#     end
+#   end
+# end
+# end
 
 
 
