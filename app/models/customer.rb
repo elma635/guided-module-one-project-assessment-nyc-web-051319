@@ -1,4 +1,5 @@
 require 'pry'
+
 class Customer < ActiveRecord::Base
   has_many :tickets
   has_many :broadway_shows, through: :tickets
