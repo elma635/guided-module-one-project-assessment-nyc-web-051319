@@ -1,31 +1,73 @@
 require_relative '../config/environment'
+require '../app'
+require 'pry'
+c1 = Customer.create(name:"Elma")
 
+binding.pry
+def start
+  greet
+  main_menu
+end
 
-puts "Hello, user welcome to my broadway_shows app!"
-puts "\n"
-puts "please choose an option:"
-puts "1. See Shows"
-puts "2. See Account"
-puts "3. Update ticket"
-puts "4. Shows that are currently playing"
-puts "5. Enter a show name to find out the genre"
-puts "6. Please enter your name to change seat number"
-puts "7. Enter a show name to see if it is in theaters"
-response = gets.chomp
-case response
-when "See Shows"
-  BroadwayShow.all.each do |bs|
-    puts "- " + bs.title
-  end
+def greet
+  puts "Hello, user welcome to my broadway_shows app!"
+  puts "Please enter your name"
+  customer_name = gets.chomp
+  user_name = Customer.new(name:customer_name)
 end
 
 
 
+def main_menu
+puts "\n"
+puts "please choose an option:"
+puts "1. See all shows that are currently playing"
+puts "2. Would you like to update your ticket?"
+puts "3. Enter a show name to find out the genre"
+puts "4. Please enter your name to change seat number"
+puts "5. Enter a show name to see if it is in theaters"
+response = gets.chomp
 
- # BroadwayShow.show_title
- # BroadwayShow.show_genre
- # BroadwayShow.all_shows_currently_playing? #need to fix up
+case response
+when 1
+  BroadwayShow.all_shows_currently_playing
 
+when 2
+     puts "1. book new ticket"
+        #method #Ticket.create(customer: self, broadway_show: broadway_show)
+          "2. find ticket by show name"
+
+
+          "3. cancel ticket"
+
+          "4. change your seat_number"
+              #Method to be placed here -- #change_seat_number(new_seat_number)
+
+            "5. Are the tickets for the show sold out?"
+      #else
+        #LOOPS BACK INTO MAIN MENU
+        "Choose an option from the main menu"
+      when 3
+        puts "Enter a show name to find out the genre of your show!"
+
+
+
+
+      end
+    end
+
+
+
+
+
+ #list of options on which one customer would like to do to their ticket
+
+ # - change seat number
+ #- change number of attendees
+ # - change time
+ # - change date
+ # - can cancel/delete their ticket
+ #
 
 
 

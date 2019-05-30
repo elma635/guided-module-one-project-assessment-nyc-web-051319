@@ -10,13 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_28_161455) do
+ActiveRecord::Schema.define(version: 2019_05_29_201134) do
 
   create_table "broadway_shows", force: :cascade do |t|
     t.string "title"
     t.string "genre"
     t.boolean "in_theaters"
-    t.integer "seat_number"
   end
 
   create_table "customers", force: :cascade do |t|
@@ -26,6 +25,8 @@ ActiveRecord::Schema.define(version: 2019_05_28_161455) do
   create_table "tickets", force: :cascade do |t|
     t.integer "broadway_show_id"
     t.integer "customer_id"
+    t.integer "seat_number"
+    t.date "date"
   end
 
 end
